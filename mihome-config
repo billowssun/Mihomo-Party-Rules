@@ -5,7 +5,7 @@
 p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://connectivitycheck.gstatic.com/generate_204, interval: 1800, timeout: 5000}}
 proxy-providers:
   Subscribe: # 在此将 "http://your-service-provider" 替换为你的机场订阅，推荐使用 base64 或者 node list
-    url: https://www.ccsub.online/link/ZnId4MA9CnygoVDb?clash=1
+    url: 
     <<: *p
     #override: # 修改节点前后缀时，需移除前方的 "#" 符号
       #additional-prefix: "节点前缀"
