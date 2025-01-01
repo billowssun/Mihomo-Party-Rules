@@ -1,11 +1,13 @@
 # Author:https://github.com/billowssun
 # TG:https://t.me/akenchannel
 #
+# 官方文档：https://wiki.metacubex.one/
+#
 # 以 '#' 或 '//' 开头的配置文件行为注释行
 #
 # Mihomo Version ≥ 1.8.10
 #
-# 最后更新时间: 2024-12-29 23 08
+# 最后更新时间: 2025年1月1日 20点20分
 #
 # ================
 
@@ -14,6 +16,12 @@ proxy-providers:
   Subscribe: # 在此将 "http://your-service-provider" 替换为你的机场订阅，推荐使用 base64 或者 node list
     url: http://your-service-provider
     <<: *p
+    #override: # 修改节点前后缀时，需移除前方的 "#" 符号
+      #additional-prefix: "节点前缀"
+      #additional-suffix: "节点后缀"
+  #Subscribe2: {url: http://your-service-provider, <<: *p}
+  #Subscribe3: {url: http://your-service-provider, <<: *p}
+  #Subscribe4: {url: http://your-service-provider, <<: *p}
 
 mixed-port: 7893
 tcp-concurrent: true
@@ -48,10 +56,51 @@ dns:
   fake-ip-filter: ['*', '+.lan', '+.local', '+.direct', '+.msftconnecttest.com', '+.msftncsi.com']
   nameserver: [223.5.5.5, 119.29.29.29]
 
+# 锚点参数
+c: &c {type: http, behavior: classical, format: text, interval: 86400}
+
 proxy-groups:
   - {name: 手动切换, type: select, include-all: true, proxies: [DIRECT], icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png}
 
+rule-providers:
+  AD: {<<: *c, path: ./rules/AD.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Reject.list}
+  Apple: {<<: *c, path: ./rules/Apple.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Apple.list}
+  YouTube: {<<: *c, path: ./rules/YouTube.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/YouTube.list}
+  Google: {<<: *c, path: ./rules/Google.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Google.list}
+  Telegram: {<<: *c, path: ./rules/Telegram.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Telegram.list}
+  Twitter: {<<: *c, path: ./rules/Twitter.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Twitter.list}
+  Steam: {<<: *c, path: ./rules/Steam.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Steam.list}
+  Epic: {<<: *c, path: ./rules/Epic.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Epic.list}
+  AI: {<<: *c, path: ./rules/AI.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/AI.list}
+  Emby: {<<: *c, path: ./rules/Emby.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Emby.list}
+  Spotify: {<<: *c, path: ./rules/Spotify.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Spotify.list}
+  Bahamut: {<<: *c, path: ./rules/Bahamut.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Bahamut.list}
+  Netflix: {<<: *c, path: ./rules/Netflix.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Netflix.list}
+  Disney: {<<: *c, path: ./rules/Disney.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Disney.list}
+  PrimeVideo: {<<: *c, path: ./rules/PrimeVideo.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/PrimeVideo.list}
+  HBO: {<<: *c, path: ./rules/HBO.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/HBO.list}
+
 rules:
+  - RULE-SET,AD,REJECT
+  - RULE-SET,AI,手动切换
+  - RULE-SET,Apple,手动切换
+  - RULE-SET,YouTube,手动切换
+  - RULE-SET,Google,手动切换
+  - RULE-SET,Telegram,手动切换
+  - RULE-SET,Twitter,手动切换
+  - RULE-SET,Steam,手动切换
+  - RULE-SET,Epic,手动切换
+  - RULE-SET,Emby,手动切换
+  - RULE-SET,Spotify,手动切换
+  - RULE-SET,Bahamut,手动切换
+  - RULE-SET,Netflix,手动切换
+  - RULE-SET,Disney,手动切换
+  - RULE-SET,PrimeVideo,手动切换
+  - RULE-SET,HBO,手动切换
+  - GEOSITE,onedrive,手动切换
+  - GEOSITE,github,手动切换
+  - GEOSITE,microsoft,手动切换
+  - GEOSITE,gfw,手动切换
   - GEOIP,private,DIRECT
   - GEOIP,cn,DIRECT
   - MATCH,手动切换
