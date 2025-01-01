@@ -3,7 +3,6 @@
   - PROCESS-NAME,wechat.exe,DIRECT # Wechat直连
   - DOMAIN-SUFFIX,steamcontent.com,DIRECT #steam下载直连
   - DOMAIN-SUFFIX,adobe.io,REJECT # 阻止Adobe软件联网
-  - PROCESS-NAME,juzhen.exe,DIRECT # 矩阵系统直连
   - DOMAIN-SUFFIX,mypikpak.com,DIRECT #pikpak直连
   - DOMAIN,one.google.com,美国节点 #Google One 走美国线路，防止部分地区不支持
   - DOMAIN-SUFFIX,cloudflare.com,美国节点 #Cloudflare 加速
