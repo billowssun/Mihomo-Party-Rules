@@ -4,7 +4,3 @@
   - DOMAIN-SUFFIX,steamcontent.com,DIRECT #steam下载直连
   - DOMAIN-SUFFIX,adobe.io,REJECT # 阻止Adobe软件联网
   - DOMAIN-SUFFIX,mypikpak.com,DIRECT #pikpak直连
-  - DOMAIN-SUFFIX,cloudflare.com,美国节点 #Cloudflare 加速
-  - DOMAIN-SUFFIX,pddshop.cc,美国节点 # 个人网站走美国节点，因为AI应用居多，防止AI程序地区不支持
-  - DOMAIN-SUFFIX,deepl.com,美国节点 # deepl 美国路线，不然功能残缺
-  - DOMAIN-SUFFIX,anthropic.com,美国节点 #claude
