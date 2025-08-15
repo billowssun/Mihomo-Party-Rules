@@ -7,7 +7,7 @@
 #
 # Mihomo Version ≥ 1.8.10
 #
-# 最后更新时间: 2025年1月1日 20点20分
+# 最后更新时间: 2025年8月15日
 #
 # ================
 
@@ -66,7 +66,8 @@ pg: &pg {type: select, proxies: [手动切换, 美国节点, DIRECT]}
 
 proxy-groups:
   - {name: 手动切换, <<: *select, proxies: [DIRECT], icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png}
-  - {name: 美国节点, <<: *url-test, filter: "(?i)(美|US|United States|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png}
+  - {name: 美国节点, <<: *select, proxies: [DIRECT], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png}
+  - {name: 兜底分组, <<: *select, use: [Subscribe], proxies: [DIRECT], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png}
 
 rule-providers:
   AD: {<<: *c, path: ./rules/AD.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Reject.list}
@@ -109,4 +110,4 @@ rules:
   - GEOSITE,gfw,手动切换
   - GEOIP,private,DIRECT
   - GEOIP,cn,DIRECT
-  - MATCH,手动切换
+  - MATCH,兜底分组
