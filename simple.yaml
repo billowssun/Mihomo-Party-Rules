@@ -110,4 +110,5 @@ rules:
   - GEOSITE,gfw,手动切换
   - GEOIP,private,DIRECT
   - GEOIP,cn,DIRECT
+  - GEOIP,us,美国节点
   - MATCH,兜底分组
