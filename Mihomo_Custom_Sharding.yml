@@ -4,3 +4,4 @@
   - DOMAIN-SUFFIX,steamcontent.com,DIRECT #steam下载直连
   - DOMAIN-SUFFIX,adobe.io,REJECT # 阻止Adobe软件联网
   - DOMAIN-SUFFIX,mypikpak.com,DIRECT #pikpak直连
+  - IP-CIDR,72.18.82.21/32,DIRECT,no-resolve
