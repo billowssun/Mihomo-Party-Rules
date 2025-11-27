@@ -5,3 +5,4 @@
   - DOMAIN-SUFFIX,adobe.io,REJECT # 阻止Adobe软件联网
   - DOMAIN-SUFFIX,mypikpak.com,DIRECT #pikpak直连
   - IP-CIDR,72.18.82.21/32,DIRECT,no-resolve
+  - IP-CIDR,66.103.211.39/32,DIRECT,no-resolve
